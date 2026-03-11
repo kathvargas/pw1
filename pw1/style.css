@@ -1,0 +1,20 @@
+body {
+	/* ocupa toda a altura da janela do navegador */
+    min-height: 100vh; 
+	/* remove a margem padrão do body */
+    margin: 0; 
+	/* cor de fundo preta para simular o espaço sideral */
+	background-color: black; 
+}
+
+img {
+	/* posicionamento absoluto para permitir o movimento da nave */
+	position: absolute; 
+	/* ajusta a posição para que o centro da imagem seja o ponto de referência */
+	transform: translate(-50%, -50%); 
+	/* adiciona uma transição suave para o movimento da nave */
+	transition: 0.5s ease;
+	/* define o tamanho da nave */
+	width: 84px;	
+	height: 112px;
+}
