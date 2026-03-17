@@ -1,0 +1,25 @@
+#square {
+    /* define o tamanho e a cor do quadrado */
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    /* define a posição */
+    position: absolute; 
+    top: 0px;
+    left: 0px;    
+    /* define cor, estilo e alinhamento do texto interno */
+    color: white;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    /* define o cursor do mouse */
+    cursor: grab;
+}
+
+p span {
+    /* ignora os eventos do mouse para o texto interno 
+       isso permite que o quadrado seja arrastado mesmo 
+       quando o mouse estiver sobre o texto */
+    pointer-events: none; 
+}
