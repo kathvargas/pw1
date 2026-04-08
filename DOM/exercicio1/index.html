@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <form id="form-students">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="name">
+            </div>
+            <div class="form-group">
+                <label for="grade">Nota:</label>
+                <input type="number" id="grade" name="grade" step="0.1">
+            </div>
+            <div class="form-group">
+                <label for="absences">Faltas:</label>
+                <input type="number" id="absences" name="absences">
+            </div>
+            <div class="form-group">
+                <div class="actions">
+                    <button type="reset" value="Reset">Limpar</button>
+                    <button type="submit" value="Submit">Enviar</button>
+                </div>
+            </div>
+        </form>
+        <div id="container">
+            <div class="list">
+                <p>Alunos aprovados</p>
+                <ul id="approved"></ul>
+            </div>
+            <div class="list">
+                <p>Alunos reprovados</p>
+                <ul id="failed"></ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
