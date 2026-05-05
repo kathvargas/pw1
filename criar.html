@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PW Arena</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="criar.js" defer></script>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div>
+                <img src="assets/images/logo.png" alt="PW Arena Logo">
+            </div>
+            <div>
+                <h1>PW Arena</h1>
+                <p>Onde os seus heróis disputam as maiores batalhas!</p>
+            </div>
+        </header>
+        <main>
+            <h2>Crie o seu herói</h2>
+            <section class="two-columns">                
+                <form id="hero-form">
+                    <input type="text" name="name" placeholder="Nome do Herói">
+                    <div class="select-wrapper">
+                        <select name="type" required>
+                            <option value="" disabled selected>Selecione o Tipo</option>
+                            <option value="bardo">Bardo</option>
+                            <option value="clerigo">Clérigo</option>
+                            <option value="druida">Druida</option>
+                            <option value="espia">Espiã</option>
+                            <option value="feiticeira">Feiticeira</option>
+                            <option value="guerreiro">Guerreiro</option>
+                            <option value="ladrao">Ladrão</option>
+                            <option value="mago">Mago</option>
+                            <option value="ranger">Ranger</option>
+                            <option value="sacerdotisa">Sacerdotisa</option>
+                        </select>
+                    </div>
+                    <input type="text" name="level" placeholder="Nível">
+                    <button type="submit" id="button-add">Criar Herói</button>
+                    <button type="button" id="button-clear">Limpar</button>
+                </form>
+                <div class="hero-card">
+                    <img id="hero-image" src="assets/images/blank.jpg" alt="foto do herói">
+                    <div class="hero-info">
+                        <span id="span-name" class="hero-name">Herói</span>
+                        <span id="span-level">00</span>
+                    </div>
+                </div>
+            </section>  
+        </main>
+    </div>
+</body>
+</html>
