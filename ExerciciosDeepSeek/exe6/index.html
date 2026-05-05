@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Produtos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Catálogo de Produtos</h1>
+
+        <form id="form-produto">
+            <input type="text" name="nome" placeholder="Nome do produto" required>
+            <select name="categoria">
+                <option value="eletrônicos">Eletrônicos</option>
+                <option value="vestuário">Vestuário</option>
+                <option value="alimentos">Alimentos</option>
+            </select>
+            <input type="number" name="preco" step="0.01" placeholder="Preço (R$)" required>
+            <input type="number" name="estoque" placeholder="Estoque" required>
+            <button type="submit">Adicionar produto</button>
+        </form>
+
+        <div class="filtros">
+            <label>Categoria:
+                <select id="filtro-categoria">
+                    <option value="todas">Todas</option>
+                    <option value="eletrônicos">Eletrônicos</option>
+                    <option value="vestuário">Vestuário</option>
+                    <option value="alimentos">Alimentos</option>
+                </select>
+            </label>
+            <label>Preço mínimo:
+                <input type="number" id="filtro-min" value="0" step="1">
+            </label>
+            <label>Preço máximo:
+                <input type="number" id="filtro-max" value="1000" step="1">
+            </label>
+        </div>
+
+        <div id="lista-produtos"></div>
+    </main>
+</body>
+</html>

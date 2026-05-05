@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <main>
+    <h1>Cadastro de Produtos</h1>
+    <form id="form-produto">
+        <input type="text" name="nome" placeholder="Nome do produto" required>
+        <select name="categoria">
+            <option value="eletrônicos">Eletrônicos</option>
+            <option value="vestuário">Vestuário</option>
+            <option value="alimentos">Alimentos</option>
+        </select>
+        <input type="number" name="preco" step="0.01" placeholder="Preço (R$)" required>
+        <input type="number" name="estoque" placeholder="Quantidade em estoque" required>
+        <button type="submit">Cadastrar Produto</button>
+    </form>
+
+    <h2>Produtos Disponíveis (estoque ≥ 5)</h2>
+    <ul id="estoque-alto"></ul>
+
+    <h2>Produtos com Baixo Estoque (estoque < 5)</h2>
+    <ul id="estoque-baixo"></ul>
+</main>
+</body>
+</html>
