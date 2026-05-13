@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lançamentos | Controle de Gastos</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Controle de Gastos Pessoais</h1>
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="lancamentos.html" class="active">Lançamentos</a>
+                <a href="novo.html">Nova Transação</a>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Todos os Lançamentos</h2>
+
+            <div class="filtros">
+                <select id="filtro-tipo">
+                    <option value="todos">Todos</option>
+                    <option value="receita">Receitas</option>
+                    <option value="despesa">Despesas</option>
+                </select>
+
+                <select id="filtro-categoria">
+                    <option value="todas">Todas categorias</option>
+                    <!-- categorias serão preenchidas pelo JS -->
+                </select>
+
+                <select id="ordenar-data">
+                    <option value="recente">Mais recente primeiro</option>
+                    <option value="antiga">Mais antiga primeiro</option>
+                </select>
+
+                <button id="aplicar-filtros" class="btn-filtrar">Aplicar Filtros</button>
+            </div>
+
+            <div class="tabela-container">
+                <table id="tabela-lancamentos">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Descrição</th>
+                            <th>Categoria</th>
+                            <th>Valor</th>
+                            <th>Tipo</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="6">Nenhum lançamento encontrado</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

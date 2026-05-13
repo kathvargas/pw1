@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Controle de Gastos</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Controle de Gastos Pessoais</h1>
+            <nav>
+                <a href="index.html" class="active">Dashboard</a>
+                <a href="lancamentos.html">Lançamentos</a>
+                <a href="novo.html">Nova Transação</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="resumo">
+                <div class="card saldo">
+                    <h3>Saldo Atual</h3>
+                    <p id="saldo-valor">R$ 0,00</p>
+                </div>
+                <div class="card receitas">
+                    <h3>Total Receitas</h3>
+                    <p id="total-receitas">R$ 0,00</p>
+                </div>
+                <div class="card despesas">
+                    <h3>Total Despesas</h3>
+                    <p id="total-despesas">R$ 0,00</p>
+                </div>
+            </div>
+
+            <div class="ultimos-lancamentos">
+                <h2>Últimos Lançamentos</h2>
+                <table id="tabela-ultimos">
+                    <thead>
+                        <tr><th>Data</th><th>Descrição</th><th>Categoria</th><th>Valor</th><th>Tipo</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="5">Carregando...</td></tr>
+                    </tbody>
+                </table>
+                <a href="lancamentos.html" class="btn-secundario">Ver todos</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

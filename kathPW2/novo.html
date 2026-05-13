@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Transação | Controle de Gastos</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Controle de Gastos Pessoais</h1>
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="lancamentos.html">Lançamentos</a>
+                <a href="novo.html" class="active">Nova Transação</a>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Adicionar Lançamento</h2>
+
+            <form id="form-novo" class="form-transacao">
+                <div class="campo">
+                    <label for="descricao">Descrição *</label>
+                    <input type="text" id="descricao" name="descricao" required autocomplete="off">
+                </div>
+
+                <div class="campo">
+                    <label for="valor">Valor (R$) *</label>
+                    <input type="number" id="valor" name="valor" step="0.01" min="0.01" required>
+                </div>
+
+                <div class="campo">
+                    <label for="tipo">Tipo *</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="receita">Receita</option>
+                        <option value="despesa">Despesa</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="categoria">Categoria</label>
+                    <input type="text" id="categoria" name="categoria" list="categorias-sugeridas" placeholder="Ex: Alimentação, Transporte...">
+                    <datalist id="categorias-sugeridas">
+                        <option>Alimentação</option>
+                        <option>Transporte</option>
+                        <option>Lazer</option>
+                        <option>Saúde</option>
+                        <option>Educação</option>
+                        <option>Salário</option>
+                        <option>Freelance</option>
+                    </datalist>
+                </div>
+
+                <div class="campo">
+                    <label for="data">Data *</label>
+                    <input type="date" id="data" name="data" required>
+                </div>
+
+                <div class="botoes-form">
+                    <button type="submit" class="btn-primario">Salvar Transação</button>
+                    <button type="button" id="cancelar" class="btn-secundario">Cancelar</button>
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

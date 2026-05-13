@@ -1,0 +1,255 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.5;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    overflow: hidden;
+    padding: 1.5rem 2rem;
+}
+
+/* Cabeçalho e navegação */
+header {
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: #1e293b;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4b5563;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    background-color: #e2e8f0;
+}
+
+nav a.active {
+    background-color: #3b82f6;
+    color: white;
+}
+
+/* Cards de resumo */
+.resumo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+    border-left: 6px solid;
+}
+
+.card h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #475569;
+}
+
+.card p {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.saldo { border-left-color: #3b82f6; }
+.receitas { border-left-color: #10b981; }
+.despesas { border-left-color: #ef4444; }
+
+/* Tabelas */
+.tabela-container {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+th, td {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background-color: #f8fafc;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+tr:hover {
+    background-color: #f9fafb;
+}
+
+/* Botões e filtros */
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-end;
+}
+
+.filtros select, .filtros button {
+    padding: 0.6rem 1rem;
+    border-radius: 12px;
+    border: 1px solid #cbd5e1;
+    background: white;
+    font-size: 0.9rem;
+}
+
+.btn-filtrar, .btn-primario, .btn-secundario, .btn-perigo {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+.btn-primario {
+    background-color: #3b82f6;
+    color: white;
+}
+.btn-primario:hover {
+    background-color: #2563eb;
+}
+
+.btn-secundario {
+    background-color: #e2e8f0;
+    color: #1e293b;
+}
+.btn-secundario:hover {
+    background-color: #cbd5e1;
+}
+
+.btn-perigo {
+    background-color: #ef4444;
+    color: white;
+}
+.btn-perigo:hover {
+    background-color: #dc2626;
+}
+
+/* Formulários */
+.form-transacao {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #f9f9fc;
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.campo {
+    margin-bottom: 1.2rem;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+.campo input, .campo select {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 16px;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+
+.campo input:focus, .campo select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+}
+
+.botoes-form {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .resumo {
+        grid-template-columns: 1fr;
+    }
+    .filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .form-transacao {
+        padding: 1.5rem;
+    }
+    th, td {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+}
+
+.ultimos-lancamentos {
+    margin-top: 2rem;
+}
+.ultimos-lancamentos a {
+    margin-top: 1rem;
+    display: inline-block;
+}
