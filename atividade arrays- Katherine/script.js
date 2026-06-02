@@ -63,8 +63,8 @@ function renderProductsTable() {
     // Utilizando o método reduce(), calcule o valor total do pedido:
     // - some o preço multiplicado pela quantidade de cada produto
     // - a linha abaixo deve ser substituída pela implementação correta utilizando o método reduce()
-    const totalValue = filterProducts.reduce((total,product)=>{
-        return total +(product.price*product.quantity,0)});
+    const totalValue = filteredProducts.reduce((total,product)=>
+         total +(product.price*product.quantity,0));
     
     // obtém a referência para o elemento que exibe o valor total do pedido
     const totalValueElement = document.querySelector("#total-value");
@@ -115,9 +115,10 @@ function sortProducts(products) {
             break;
         case "name-descending":
             // ...
+            products.sort((a,b)=>{
             if(a.name>b.name) return -1;
                 if(a.name<b.name) return 1;
-            return 0;
+            return 0;})
             break;
         case "price-ascending":
             // ...
@@ -136,10 +137,10 @@ function sortProducts(products) {
              products.sort((a,b)=>b.quantity-a.quantity)
             break;
         case "total-ascending":
-            // ...
+            products.sort((a,b)=>(a.price * a.quantity) - (b.price * b.quantity));
             break;
         case "total-descending":
-            // ...
+            products.sort((a,b)=>b.price * b.quantity) - (a.price * a.quantity);
             break;
         // case "none": não faz nada, mantém a ordem original dos produtos
     }
@@ -156,7 +157,7 @@ function deleteProduct(reference) {
 
         // ### QUESTÃO 6 ###
         // Utilize o método splice() para remover o produto do array de produtos, 
-
+        products.splice(index,1);
 
 
         if (editingProduct === reference) {
@@ -209,7 +210,7 @@ form.addEventListener("submit", event => {
 
     // ### QUESTÃO 7 ###
     // Utilize o método some() para verificar se já existe um produto com a mesma referência    
-
+const referenceExists=products.some(product=>product.reference===reference);
 
 
     if (referenceExists) {
@@ -239,7 +240,7 @@ form.addEventListener("submit", event => {
         
         // ### QUESTÃO 8 ###
         // Utilize o método push() para adicionar o novo produto ao array de produtos
- 
+        products.push(newProduct)
 
     }
 
@@ -263,7 +264,7 @@ function editProduct(reference) {
 
     // ### QUESTÃO 9 ###
     // Utilizando o método find(), encontre o produto a ser editado no array de produtos
-
+const product=products.find((prod,prod.reference===reference))
 
 
     // Se o produto for encontrado, preenche os campos do formulário com os dados do produto
@@ -293,8 +294,12 @@ function sendOrder() {
     // ### QUESTÃO 10 ###
     // Utilize o método map() para criar um novo array com os itens do pedido
     // cada item deve ser um objeto contendo apenas a referência e a quantidade
-    
-
+    const items=products.map(product=>{
+        return{
+            reference:product.reference,
+            quantity:product.quantity
+        }
+    })
 
 
     // alerta confirmando o envio do pedido, exibindo a lista de itens no formato JSON
