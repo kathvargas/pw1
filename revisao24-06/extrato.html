@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrato de Conta</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <h1>Extrato de Conta</h1>
+
+        <section class="resumo">
+            <div>
+                <h2>Receitas</h2>
+                <p id="total-receitas">R$ 0,00</p>
+            </div>
+            <div>
+                <h2>Despesas</h2>
+                <p id="total-despesas">R$ 0,00</p>
+            </div>
+            <div>
+                <h2>Saldo</h2>
+                <p id="saldo">R$ 0,00</p>
+            </div>
+        </section>
+
+        <section class="formulario">
+            <h2>Novo lançamento</h2>
+
+            <form id="form-lancamento">
+                <input type="text" id="descricao" placeholder="Descrição">
+
+                <input type="number" id="valor" placeholder="Valor" step="0.01">
+
+                <input type="date" id="data">
+
+                <select id="tipo">
+                    <option value="receita">Receita</option>
+                    <option value="despesa">Despesa</option>
+                </select>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+
+        <section class="controles">
+            <label>
+                Filtrar:
+                <select id="filtro">
+                    <option value="todos">Todos</option>
+                    <option value="receita">Receitas</option>
+                    <option value="despesa">Despesas</option>
+                </select>
+            </label>
+
+            <label>
+                Ordenar:
+                <select id="ordenacao">
+                    <option value="data">Data</option>
+                    <option value="descricao">Descrição</option>
+                    <option value="valor">Valor</option>
+                </select>
+            </label>
+        </section>
+
+        <ul id="lista-movimentacoes">   
+            <!-- As movimentações serão adicionadas aqui dinamicamente -->
+        </ul>
+    </main>
+</body>
+
+</html>
